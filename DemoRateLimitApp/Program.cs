@@ -9,6 +9,12 @@ builder.Services.AddMemoryCache();
 builder.Services.AddHttpContextAccessor();
 builder.Services.ConfigureRateLimiting();
 
+builder.Services.AddCors(CorsOptions =>
+{
+    CorsOptions.AddPolicy("AllowAll", corsAccesses =>
+    corsAccesses.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+    );
+});
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
@@ -16,6 +22,9 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAll");
+
 app.UseHttpsRedirection();
 app.UseIpRateLimiting();
 app.UseAuthorization();
