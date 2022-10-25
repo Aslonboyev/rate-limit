@@ -32,7 +32,7 @@ namespace DemoRateLimitApp.Configurations
                     new RateLimitRule()
                     {
                         Endpoint="*",
-                        Period="1h",
+                        Period="10m",
                         Limit=10,
                     },
                 };
