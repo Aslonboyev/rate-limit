@@ -21,18 +21,20 @@ namespace DemoRateLimitApp.Configurations
                     //    Period = "1s",
                     //    Limit = 2,
                     //},
-                    new RateLimitRule()
-                    {
-                        Endpoint="*",
-                        Period="1m",
-                        Limit=10,
-                    },
+
                     //new RateLimitRule()
                     //{
                     //    Endpoint="*",
-                    //    Period="1h",
-                    //    Limit=30,
+                    //    Period="1m",
+                    //    Limit=10,
                     //},
+
+                    new RateLimitRule()
+                    {
+                        Endpoint="*",
+                        Period="1h",
+                        Limit=10,
+                    },
                 };
             });
 
