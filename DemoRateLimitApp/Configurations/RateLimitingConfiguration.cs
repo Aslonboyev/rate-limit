@@ -15,18 +15,18 @@ namespace DemoRateLimitApp.Configurations
                 option.ClientIdHeader = "X-ClientId";
                 option.GeneralRules = new List<RateLimitRule> {
 
-                    new RateLimitRule()
-                    {
-                        Endpoint="*",
-                        Period="1h",
-                        Limit=30,
-                    },
-                    new RateLimitRule()
-                    {
-                        Endpoint="*",
-                        Period="1m",
-                        Limit=10,
-                    },
+                    //new RateLimitRule()
+                    //{
+                    //    Endpoint="*",
+                    //    Period="1h",
+                    //    Limit=30,
+                    //},
+                    //new RateLimitRule()
+                    //{
+                    //    Endpoint="*",
+                    //    Period="1m",
+                    //    Limit=10,
+                    //},
                     new RateLimitRule
                     {
                         Endpoint = "*",
