@@ -14,11 +14,12 @@ namespace DemoRateLimitApp.Configurations
                 option.RealIpHeader = "X-Real-IP";
                 option.ClientIdHeader = "X-ClientId";
                 option.GeneralRules = new List<RateLimitRule> {
-                    new RateLimitRule
+
+                    new RateLimitRule()
                     {
-                        Endpoint = "*",
-                        Period = "1s",
-                        Limit = 2,
+                        Endpoint="*",
+                        Period="1h",
+                        Limit=30,
                     },
                     new RateLimitRule()
                     {
@@ -26,12 +27,12 @@ namespace DemoRateLimitApp.Configurations
                         Period="1m",
                         Limit=10,
                     },
-                    new RateLimitRule()
+                    new RateLimitRule
                     {
-                        Endpoint="*",
-                        Period="1h",
-                        Limit=30,
-                    }
+                        Endpoint = "*",
+                        Period = "1s",
+                        Limit = 2,
+                    },
                 };
             });
 
